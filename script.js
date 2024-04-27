@@ -1,11 +1,21 @@
+const linhaBotao = document.querySelector('.linhaBotao');
+
+const botaoGrade = document.createElement('button');
+
+botaoGrade.textContent = 'Clique para alterar a quantidade de quadrados';
+
+
+linhaBotao.appendChild(botaoGrade);
+
 
 
 function criarLinha() {
-    const container = document.querySelector('.container');
+    const grade = document.querySelector('.grade');
     for (let i = 0; i < 16; i++) {
         const square = document.createElement("div");
+
         square.classList.add('square');
-        container.appendChild(square);
+        grade.appendChild(square);
     }
     
 }

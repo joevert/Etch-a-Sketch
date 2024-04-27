@@ -8,6 +8,10 @@
     width: 20px;
     height: 20px;
     background-color: aquamarine;
-    margin: 5px;   
- 
+    margin: 5px;    
+}
+
+.grade {
+    display: flex;
+    flex-wrap: wrap;
 }
