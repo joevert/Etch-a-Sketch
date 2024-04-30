@@ -49,10 +49,18 @@ squares.forEach(square => {
 
 })
 
+function limparGrade() {
+    const grade = document.querySelector('.grade');
+    grade.innerHTML = '';
+}
+
 botaoGrade.addEventListener('click', () => {
     let numQuadrados;
     do {
         numQuadrados = parseInt(prompt('digte qtd quadrados, max 100'));
     } while(isNaN(numQuadrados) || numQuadrados < 1 || numQuadrados > 100);
+    limparGrade();
     criarGrade(numQuadrados);  
 });
+
+
