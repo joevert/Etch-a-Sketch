@@ -9,9 +9,9 @@ linhaBotao.appendChild(botaoGrade);
 
 
 
-function criarLinha() {
+function criarLinha(numQuadrados) {
     const grade = document.querySelector('.grade');
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < numQuadrados; i++) {
         const square = document.createElement("div");
 
         square.classList.add('square');
@@ -20,13 +20,13 @@ function criarLinha() {
     
 }
 
-function criarGrade () {
-    for (i = 0; i < 16; i++) {
-        criarLinha();
+function criarGrade (numQuadrados) {
+    for (i = 0; i < numQuadrados; i++) {
+        criarLinha(numQuadrados);
     }
 }
 
-criarGrade();
+criarGrade(16);
 
 
 const squares = document.querySelectorAll('.square');
@@ -41,3 +41,10 @@ squares.forEach(square => {
     })
 
 })
+
+botaoGrade.addEventListener('click', () => {
+    do {
+        const numQuadrados = parseInt(prompt('digte qtd quadrados, max 100'));
+    } while(numQuadrados.isNaN || numQuadrados < 1 || numQuadrados > 100);
+    criarGrade(numQuadrados);  
+});
