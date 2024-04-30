@@ -1,14 +1,16 @@
+
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 480px;
 }
 
 .square {
     width: 20px;
     height: 20px;
     background-color: aquamarine;
-    margin: 5px;    
+    margin: 5px;
+    display: block;
 }
 
 .grade {

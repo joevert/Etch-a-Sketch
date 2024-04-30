@@ -4,24 +4,31 @@ const botaoGrade = document.createElement('button');
 
 botaoGrade.textContent = 'Clique para alterar a quantidade de quadrados';
 
-
 linhaBotao.appendChild(botaoGrade);
 
+//seleciona div onde os quadrados ficarao
+const grade = document.querySelector('.grade');
 
 
 function criarLinha(numQuadrados) {
-    const grade = document.querySelector('.grade');
+    
+    const gradeWidth = numQuadrados*50;
+    const gradeHeight = numQuadrados*50;
+    grade.style.height = `${gradeHeight}px`;
+    grade.style.width = `${gradeWidth}px`;
+    const novaLinha = document.createElement("div");
     for (let i = 0; i < numQuadrados; i++) {
         const square = document.createElement("div");
-
         square.classList.add('square');
-        grade.appendChild(square);
+        novaLinha.appendChild(square);
     }
-    
+    grade.appendChild(novaLinha);
 }
 
 function criarGrade (numQuadrados) {
     for (i = 0; i < numQuadrados; i++) {
+        
+        
         criarLinha(numQuadrados);
     }
 }
@@ -43,8 +50,9 @@ squares.forEach(square => {
 })
 
 botaoGrade.addEventListener('click', () => {
+    let numQuadrados;
     do {
-        const numQuadrados = parseInt(prompt('digte qtd quadrados, max 100'));
-    } while(numQuadrados.isNaN || numQuadrados < 1 || numQuadrados > 100);
+        numQuadrados = parseInt(prompt('digte qtd quadrados, max 100'));
+    } while(isNaN(numQuadrados) || numQuadrados < 1 || numQuadrados > 100);
     criarGrade(numQuadrados);  
 });
