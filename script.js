@@ -40,14 +40,23 @@ const squares = document.querySelectorAll('.square');
 
 squares.forEach(square => {
     square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = 'red';
+        randomColor(square);
     });
     
     square.addEventListener('mouseout', () => {
         square.style.backgroundColor = '';
     })
-
 })
+
+function randomColor (square){
+
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+
+        square.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    }
+
 
 function limparGrade() {
     const grade = document.querySelector('.grade');
